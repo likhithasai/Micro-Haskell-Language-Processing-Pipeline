@@ -1,0 +1,15 @@
+
+-- Example of a program in Micro-Haskell (2013)
+
+fib :: Integer -> Integer ;
+fib n = if n==0 then 0 else if n==1 then 1 else fib (n-1) + fib (n-2) ;
+
+gcd :: Integer -> Integer -> Integer ;
+gcd m n = if m<=n then if n<=m then m else gcd m (n-m) else gcd (m-n) n ;
+
+times :: Integer -> Integer -> Integer ;
+times m n = if 0 <= n then if n <= 0 then 0 else m + times m (n-1)
+                      else times m (n+1) - m ;
+
+twice :: (Integer -> Integer) -> Integer -> Integer ;
+twice f n = f (f n) ;
